@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import traceback
 import sys
+import os
 
 intents = discord.Intents.default()
 #Message content intent needs to be enabled in the developer portal for your chosen bot.
@@ -11,7 +12,7 @@ bot = commands.Bot(command_prefix=".", intents=intents)
 
 bot.remove_command("help")
 
-DISCORD_TOKEN = 'Enter Discord Token here'
+DISCORD_TOKEN = os.environ['TOKEN']
 
 initial_extensions = ['cogs.voice']
 
